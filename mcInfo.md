@@ -16,6 +16,9 @@ npm install react-redux @reduxjs/toolkit
 npm install -D tailwindcss
 npx tailwind init
 
+`https://www.npmjs.com/package/react-icons`
+npm i react-icons --save
+
 more issues:
 `https://tailwindcss.com/docs/guides/create-react-app`
 `https://chromewebstore.google.com/category/extensions/productivity/developer?hl=en`
