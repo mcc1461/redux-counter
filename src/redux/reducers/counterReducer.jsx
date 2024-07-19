@@ -1,4 +1,4 @@
-// components/Number.js
+// counterReducer.jsx
 import { useDispatch, useSelector } from "react-redux";
 import {
   decrement,
@@ -8,7 +8,7 @@ import {
 } from "../slices/counterSlice";
 import { useState, useEffect } from "react";
 
-function Number() {
+function Counter() {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
   const number = useSelector((state) => state.counter.number);
@@ -35,15 +35,19 @@ function Number() {
       >
         <button
           onClick={() => dispatch(increment())}
-          className="w-40 h-10 p-2 mt-5 rounded-md outline-1 outline-violet-500 outline"
+          className="w-40 h-10 p-2 mt-5 rounded-md outline-1 outline-violet-500 outline text-violet-900"
           style={{ backgroundColor: "#c2ff72" }}
         >
           Increment by 5
         </button>
         <button
           onClick={() => dispatch(decrement())}
-          className="w-40 h-10 p-2 mt-5 rounded-md outline-1 outline-violet-500 outline"
-          style={{ backgroundColor: "#c2ff72" }}
+          className="w-40 h-10 p-2 mt-5 rounded-md outline-1 outline-violet-500 outline text-violet-900"
+          style={
+            number < 5
+              ? { backgroundColor: "transparent" }
+              : { backgroundColor: "#c2ff72" }
+          }
           disabled={number < 5}
         >
           Decrement by 5
@@ -55,8 +59,18 @@ function Number() {
       >
         <div className="p-5 space-x-5 rounded-md outline outline-1 outline-violet-500">
           <input
-            className="w-40 h-10 pl-2 rounded-md outline outline-1 outline-violet-500"
-            onChange={(e) => setValue(e.target.value)}
+            className="w-40 h-10 pl-2 rounded-md outline outline-1 outline-violet-500 text-violet-900"
+            onChange={(e) => {
+              let newValue = e.target.value.trim();
+              if (newValue === "") {
+                newValue = "";
+                reset();
+              }
+              // Check the trimmed value consists only of digits
+              if (/^\d*$/.test(newValue)) {
+                setValue(newValue);
+              }
+            }}
             value={value}
             placeholder="Enter Value"
           />
@@ -65,7 +79,7 @@ function Number() {
               dispatch(incrementByValue(Number(value)));
               setValue("");
             }}
-            className="w-40 h-10 p-2 rounded-md outline-1 outline-violet-500 outline"
+            className="w-40 h-10 p-2 rounded-md outline-1 outline-violet-500 outline text-violet-900"
             style={{ backgroundColor: "#c2ff72" }}
           >
             Add this Value
@@ -81,11 +95,15 @@ function Number() {
       >
         Reset
       </button>
-      <h3 id="showcase" style={{ visibility: "hidden" }}>
+      <h3
+        className="text-violet-400"
+        id="showcase"
+        style={{ visibility: "hidden", marginBottom: "100px" }}
+      >
         Counter cannot be less than 0
       </h3>
     </div>
   );
 }
 
-export default Number;
+export default Counter;
