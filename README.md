@@ -58,6 +58,7 @@ Open your browser and navigate to http://localhost:3007.
 Contact
 Feel free to reach out to me for any questions or feedback:
 
-> > [LinkedIn](https://www.linkedin.com/in/mcoskuncelebi/) > > [GitHub](https://github.com/mcc1461)
+[LinkedIn](https://www.linkedin.com/in/mcoskuncelebi/) 
+[GitHub](https://github.com/mcc1461)
 
 Thank you for checking out the Redux Counter App. I hope you find it helpful and informative!
