@@ -5,7 +5,7 @@ import {
   increment,
   incrementByValue,
   reset,
-} from "../slices/counterSlice";
+} from "../redux/slices/counterSlice";
 import { useState, useEffect } from "react";
 
 function Counter() {
