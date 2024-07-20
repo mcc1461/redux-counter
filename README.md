@@ -62,3 +62,11 @@ Feel free to reach out to me for any questions or feedback:
 [GitHub](https://github.com/mcc1461)
 
 Thank you for checking out the Redux Counter App. I hope you find it helpful and informative!
+
+This project was published as an article on the following platforms:
+
+[Medium](https://mcc1461.medium.com/)
+[Dev Community (Dev.to)](https://dev.to/mcc1461)
+[Hashnode](https://mcc1461.hashnode.dev/)
+
+Stay tuned for more projects and articles! 😊
